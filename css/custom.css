@@ -1,0 +1,240 @@
+  
+ :root {  
+     --bg: #0b0b0c;  
+     --bg-soft: #121214;  
+     --surface: #171719;  
+     --surface-hover: #1d1d20;  
+     --white: #f4f4f2;  
+     --text: #e9e9e7;  
+     --muted: #989894;  
+     --line: rgba(255,255,255,.14);  
+     --accent: #42d9ff;  
+     --accent-2: #147cff;  
+     --result: #ff583d;  
+     --radius: 16px;  
+     --container: 1200px;  
+     --ease: cubic-bezier(.22,.61,.36,1);  
+ }  
+   
+ .julia-page,  
+ .julia-page * { box-sizing: border-box; }  
+   
+ .julia-page {  
+     width: 100%;  
+     overflow: hidden;  
+     background: var(--bg);  
+     color: var(--text);  
+     font-family: Inter, Arial, Helvetica, sans-serif;  
+     -webkit-font-smoothing: antialiased;  
+ }  
+   
+ .julia-container {  
+     width: min(var(--container), calc(100% - 48px));  
+     margin: 0 auto;  
+ }  
+   
+ .julia-section { position: relative; padding: 130px 0; }  
+   
+ .julia-kicker {  
+     display: block;  
+     margin-bottom: 22px;  
+     color: var(--accent);  
+     font-size: 12px;  
+     line-height: 1;  
+     font-weight: 700;  
+     letter-spacing: .12em;  
+     text-transform: uppercase;  
+ }  
+   
+ .julia-h1 {  
+     margin: 0;  
+     max-width: 950px;  
+     font-size: clamp(48px, 7vw, 88px);  
+     line-height: .94;  
+     font-weight: 700;  
+     letter-spacing: -.055em;  
+ }  
+   
+ .julia-h2 {  
+     margin: 0;  
+     max-width: 800px;  
+     font-size: clamp(38px, 5vw, 62px);  
+     line-height: .98;  
+     font-weight: 700;  
+     letter-spacing: -.045em;  
+ }  
+   
+ .julia-h3 {  
+     margin: 0;  
+     font-size: 25px;  
+     line-height: 1.1;  
+     font-weight: 600;  
+     letter-spacing: -.025em;  
+ }  
+   
+ .julia-text {  
+     margin: 0;  
+     font-size: 18px;     line-height: 1.58;  
+     color: var(--muted);  
+ }  
+   
+ .julia-small { font-size: 13px; line-height: 1.5; color: var(--muted); }  
+   
+ .julia-btn {  
+     position: relative;  
+     display: inline-flex;  
+     min-height: 54px;  
+     align-items: center;  
+     justify-content: center;  
+     padding: 0 28px;  
+     border: 0;  
+     border-radius: 999px;  
+     background: var(--accent);  
+     color: #071014 !important;  
+     font-size: 15px;  
+     line-height: 1;  
+     font-weight: 700;  
+     text-decoration: none;  
+     transition: transform .25s var(--ease), background .25s ease, box-shadow .25s ease;  
+ }  
+   
+ .julia-btn:hover {  
+     background: #75e5ff;  
+     transform: translateY(-3px);  
+     box-shadow: 0 12px 35px rgba(66,217,255,.20);  
+ }  
+   
+ .julia-page a { transition: opacity .2s ease, color .2s ease; }  
+ .julia-section-header { margin-bottom: 65px; display: flex; flex-direction: column; }  
+   
+ .julia-reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s var(--ease), transform .7s var(--ease); }  
+ .julia-reveal.is-visible { opacity: 1; transform: translateY(0); }  
+   
+ .julia-header {  
+     position: sticky;  
+     top: 0;  
+     z-index: 9999;  
+     background: rgba(11,11,12,.82);  
+     border-bottom: 1px solid rgba(255,255,255,.08);  
+     backdrop-filter: blur(18px);  
+     -webkit-backdrop-filter: blur(18px);  
+ }  
+   
+ .julia-header-inner {  
+     min-height: 76px;  
+     display: grid;  
+     grid-template-columns: auto 1fr auto;  
+     align-items: center;  
+     gap: 40px;  
+ }  
+   
+ .julia-logo { color: var(--white); font-size: 14px; font-weight: 700; letter-spacing: .07em; text-decoration: none; white-space: nowrap; }  
+ .julia-nav { display: flex; align-items: center; justify-content: center; gap: 28px; }  
+ .julia-nav a { color: var(--muted); font-size: 13px; text-decoration: none; }  
+ .julia-nav a:hover { color: var(--white); }  
+   
+ .julia-hero { padding: 105px 0 70px; }  
+ .julia-hero-grid { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(360px,.8fr); gap: 90px; align-items: end; }  
+ .julia-hero-description { max-width: 650px; margin: 32px 0; }  
+ .julia-hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 38px; }  
+ .julia-hero-tags span { padding: 9px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 12px; }  
+ .julia-hero-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; border-radius: var(--radius); }  
+ .julia-photo-info { display: flex; justify-content: space-between; gap: 20px; margin-top: 15px; font-size: 13px; }  
+ .julia-photo-info span { color: var(--muted); }  
+   
+ .julia-results { padding: 30px 0 110px; }  
+ .julia-results-grid { display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid var(--line); }  
+ .julia-result { padding: 25px 22px 0 0; }  
+ .julia-result:not(:last-child) { border-right: 1px solid var(--line); }  
+ .julia-result strong { display: block; font-size: clamp(38px,5vw,68px); line-height: .95; letter-spacing: -.055em; color: var(--white); }  
+ .julia-result:first-child strong,.julia-result:nth-child(2) strong,.julia-result:nth-child(3) strong { color: var(--accent); }  
+ .julia-result span { display:block; margin-top:12px; max-width:180px; color:var(--muted); font-size:13px; line-height:1.45; }  
+   
+ .julia-services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }  
+ .julia-service { position: relative; min-height: 310px; padding: 30px; overflow:hidden; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); transition:background .3s ease, transform .3s ease; }  
+ .julia-service:hover { background:var(--surface-hover); transform:translateY(-4px); }  
+ .julia-service-number { color:var(--muted); font-size:12px; }  
+ .julia-service h3 { position:absolute; left:30px; bottom:70px; max-width:380px; }  
+ .julia-service p { position:absolute; left:30px; right:30px; bottom:28px; max-width:550px; margin:0; }  
+   
+ .julia-process-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); }  
+ .julia-process { padding:25px 25px 10px 0; }  
+ .julia-process + .julia-process { border-left:1px solid var(--line); padding-left:25px; }  
+ .julia-process-number { color:var(--accent); font-size:12px; font-weight:700; }  
+ .julia-process h3 { margin:75px 0 15px; font-size:24px; line-height:1.1; }  
+ .julia-process p { margin:0; color:var(--muted); font-size:14px; line-height:1.5; }  
+   
+ .julia-case { padding:45px 0; border-top:1px solid var(--line); }  
+ .julia-case:last-child { border-bottom:1px solid var(--line); }  
+ .julia-case-top { display:flex; justify-content:space-between; gap:20px; margin-bottom:50px; }  
+ .julia-case-number { color:var(--muted); font-size:13px; }  
+ .julia-case-category { color:var(--accent); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }  
+ .julia-case-grid { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr); gap:100px; }  
+ .julia-case-description { max-width:620px; margin-top:20px; }  
+ .julia-case-result-label { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; }  
+ .julia-case-result-value { margin:10px 0 5px; color:var(--result); font-size:clamp(50px,6vw,82px); line-height:.9; font-weight:700; letter-spacing:-.065em; }  
+ .julia-case-result-text { color:var(--muted); font-size:14px; }  
+   
+ .julia-about-grid { display:grid; grid-template-columns:1fr 1fr; gap:100px; }  
+ .julia-about-lead { margin:0 0 30px; font-size:clamp(25px,3vw,34px); line-height:1.2; letter-spacing:-.03em; }  
+ .julia-about-facts { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:60px; }  
+ .julia-about-fact { padding-top:16px; border-top:1px solid var(--line); }  
+ .julia-about-fact strong { display:block; font-size:25px; }  
+ .julia-about-fact span { display:block; margin-top:8px; color:var(--muted); font-size:12px; line-height:1.45; }  
+   
+ .julia-reviews-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }  
+ .julia-review { min-height:360px; padding:34px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); display:flex; flex-direction:column; }  
+ .julia-stars { color:var(--accent); font-size:14px; letter-spacing:3px; }  
+ .julia-review blockquote { margin:auto 0; padding:50px 0; font-size:clamp(22px,2.4vw,30px); line-height:1.28; letter-spacing:-.025em; }  
+ .julia-review-author strong,.julia-review-author span { display:block; }  
+ .julia-review-author span { margin-top:5px; color:var(--muted); font-size:12px; }  
+   
+ .julia-certificates { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }  
+ .julia-certificate { position:relative; min-height:200px; padding:25px; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); color:var(--white); text-decoration:none; display:flex; flex-direction:column; transition:transform .25s ease, border-color .25s ease; }  
+ .julia-certificate:hover { transform:translateY(-4px); border-color:rgba(66,217,255,.5); }  
+ .julia-certificate span { color:var(--muted); font-size:12px; }  
+ .julia-certificate strong { margin-top:auto; font-size:24px; }  
+   
+ .julia-contact { padding:130px 0; }  
+ .julia-contact-box { padding:70px; background:linear-gradient(135deg,#111820,#101012); border:1px solid var(--line); border-radius:24px; position:relative; overflow:hidden; }  
+ .julia-contact-box:after { content:""; position:absolute; width:380px; height:380px; right:-150px; bottom:-180px; background:radial-gradient(circle,rgba(66,217,255,.18),transparent 70%); pointer-events:none; }  
+ .julia-contact-links { display:flex; flex-wrap:wrap; gap:24px; margin-top:45px; }  
+ .julia-contact-links a { color:var(--white); text-decoration:none; font-size:19px; font-weight:600; }  
+ .julia-contact-links a:hover { color:var(--accent); }  
+   
+ .julia-footer { padding:35px 0 50px; border-top:1px solid var(--line); }  
+ .julia-footer-inner { display:flex; justify-content:space-between; gap:30px; color:var(--muted); font-size:12px; }  
+   
+ @media (max-width: 900px) {  
+     .julia-hero-grid,.julia-about-grid { grid-template-columns:1fr; gap:55px; }  
+     .julia-case-grid { grid-template-columns:1fr; gap:45px; }  
+     .julia-process-grid { grid-template-columns:1fr 1fr; }  
+     .julia-certificates { grid-template-columns:1fr 1fr; }  
+ }  
+   
+ @media (max-width: 640px) {  
+     .julia-container { width:calc(100% - 40px); }     .julia-section { padding:80px 0; }  
+     .julia-hero { padding-top:60px; }  
+     .julia-header-inner { min-height:64px; grid-template-columns:1fr auto; gap:15px; }  
+     .julia-nav { display:none; }  
+     .julia-header .julia-btn { min-height:42px; padding:0 15px; font-size:12px; }  
+     .julia-h1 { font-size:45px; }  
+     .julia-h2 { font-size:37px; }  
+     .julia-text { font-size:17px; }  
+     .julia-results { padding-bottom:70px; }  
+     .julia-results-grid { grid-template-columns:1fr 1fr; }  
+     .julia-result { padding:20px 15px 20px 0; }  
+     .julia-result:nth-child(2) { border-right:none; }  
+     .julia-services-grid { grid-template-columns:1fr; }  
+     .julia-service { min-height:260px; }  
+     .julia-process-grid { grid-template-columns:1fr; }  
+     .julia-process + .julia-process { border-left:0; border-top:1px solid var(--line); padding:25px 0; }  
+     .julia-process h3 { margin-top:45px; }  
+     .julia-about-facts { grid-template-columns:1fr; }  
+     .julia-reviews-grid { grid-template-columns:1fr; }  
+     .julia-certificates { grid-template-columns:1fr; }  
+     .julia-contact-box { padding:35px 25px; }  
+     .julia-contact-links { flex-direction:column; }  
+     .julia-footer-inner { flex-direction:column; }  
+ }  
+ </style>
