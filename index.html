@@ -168,16 +168,23 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 
 // 3. Кнопка "Наверх"
-document.addEventListener('DOMContentLoaded', function () {
-  var totop = document.getElementById('juliaTotop');
-  if (!totop) return;
-  window.addEventListener('scroll', function () {
-    totop.classList.toggle('is-visible', window.scrollY > 600);
-  }, { passive: true });
-  totop.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
+(function () {
+  function initTotop() {
+    var totop = document.getElementById('juliaTotop');
+    if (!totop) return;
+    window.addEventListener('scroll', function () {
+      totop.classList.toggle('is-visible', window.scrollY > 600);
+    }, { passive: true });
+    totop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTotop);
+  } else {
+    initTotop();
+  }
+})();
 
 // 4. Картинки кейсов открываются в модальном окне сертификатов
 document.addEventListener('DOMContentLoaded', function () {
