@@ -125,22 +125,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ============ МОБИЛЬНЫЙ АДАПТИВ: JS ============
 // 1. Бургер-меню
-document.addEventListener('click', function (e) {
+document.addEventListener('DOMContentLoaded', function () {
   var burger = document.getElementById('juliaBurger');
   var nav = document.getElementById('juliaNav');
   if (!burger || !nav) return;
-  
-  if (e.target.closest('#juliaBurger')) {
+  burger.addEventListener('click', function () {
     var open = nav.classList.toggle('is-open');
     burger.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-  
-  if (e.target.closest('.julia-nav a')) {
-    nav.classList.remove('is-open');
-    burger.classList.remove('is-open');
-  }
-});
+  });
   nav.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', function () {
       nav.classList.remove('is-open');
