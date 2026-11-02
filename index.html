@@ -1014,7 +1014,24 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script></head
   .julia-hero-tags { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px; }
   .julia-hero-tags span { font-size: 14px; min-height: 44px; } /* 2 ряда, компактно */
   .julia-hero-actions { flex-direction: column; align-items: stretch; }
-  .julia-hero-actions .julia-btn { width: 100%; min-height: 56px; font-size: 17px; } /* вся ширина, удобно пальцем */
+  .julia-btn {
+    white-space: normal !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center;
+    line-height: 1.2;
+    padding: 0 20px;
+    height: auto;
+  }
+  .julia-hero-actions .julia-btn,
+  .julia-ai .julia-btn,
+  .julia-contact-box .julia-btn,
+  .julia-section[style*="20px 0"] .julia-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 56px;
+    font-size: 17px;
+  } /* вся ширина, удобно пальцем */
 
   /* ===== 3. СТАТИСТИКА — сетка 2x2, больше воздуха (п.1 комментариев) ===== */
   .julia-results { padding: 16px 0 56px; }
