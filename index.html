@@ -125,22 +125,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ============ МОБИЛЬНЫЙ АДАПТИВ: JS ============
 // 1. Бургер-меню
-document.addEventListener('DOMContentLoaded', function () {
-  var burger = document.getElementById('juliaBurger');
-  var nav = document.getElementById('juliaNav');
-  if (!burger || !nav) return;
-  burger.addEventListener('click', function () {
-    var open = nav.classList.toggle('is-open');
-    burger.classList.toggle('is-open', open);
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  nav.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      nav.classList.remove('is-open');
-      burger.classList.remove('is-open');
+(function () {
+  function initBurger() {
+    var burger = document.getElementById('juliaBurger');
+    var nav = document.getElementById('juliaNav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-  });
-});
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('is-open');
+        burger.classList.remove('is-open');
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBurger);
+  } else {
+    initBurger();
+  }
+})();
 
 // 2. Аккордеон услуг (клик по карточке раскрывает текст — только на мобильном)
 document.addEventListener('DOMContentLoaded', function () {
