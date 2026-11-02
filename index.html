@@ -1064,8 +1064,20 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script></head
     color: var(--accent); font-size: 28px; font-weight: 300; transition: transform .3s ease;
   }
   .julia-service.expanded h3::after { transform: translateY(-50%) rotate(45deg); }
-  .julia-service p { display: none; border-top: none; padding-top: 0; }
-  .julia-service.expanded p { display: block; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 16px; }
+.julia-service { min-height: 0 !important; padding: 22px !important; }
+.julia-service p {
+  display: none !important;
+  border-top: none !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+.julia-service.expanded p {
+  display: block !important;
+  margin-top: 14px !important;
+  padding-top: 14px !important;
+  border-top: 1px solid var(--line) !important;
+  font-size: 16px !important;
+}
 
   /* AI-блок: плашки 2x2 */
   .julia-ai { padding: 28px 22px; margin-top: 12px; }
