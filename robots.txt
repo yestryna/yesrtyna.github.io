@@ -16,4 +16,4 @@ Disallow: /tilda/event*
 Disallow:
 
 
-Sitemap: http://portfolio-internet-marketolog.tilda.ws/sitemap.xml
+Sitemap: https://yestrina.ru/sitemap.xml
