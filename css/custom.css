@@ -216,7 +216,8 @@
      .julia-container { width:calc(100% - 40px); }     .julia-section { padding:80px 0; }  
      .julia-hero { padding-top:60px; }  
      .julia-header-inner { min-height:64px; grid-template-columns:1fr auto; gap:15px; }  
-     .julia-nav { display:none; }  
+     .julia-nav { display: none; }
+     .julia-nav.is-open { display: flex; flex-direction: column; }
      .julia-header .julia-btn { min-height:42px; padding:0 15px; font-size:12px; }  
      .julia-h1 { font-size:45px; }  
      .julia-h2 { font-size:37px; }  
