@@ -1231,6 +1231,15 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script></head
     color: var(--accent-hover);
     transform: translateY(0) scale(.92);
   }
+
+  /* Hero на мобилке: заголовок → теги → фото → кнопка */
+  .julia-hero-grid > .julia-reveal:first-child { display: contents; }
+  .julia-hero-grid > .julia-reveal:first-child > .julia-kicker,
+  .julia-hero-grid > .julia-reveal:first-child > .julia-h1,
+  .julia-hero-grid > .julia-reveal:first-child > .julia-hero-tags { order: 1; }
+  .julia-hero-grid > .julia-hero-photo { order: 2; }
+  .julia-hero-grid > .julia-reveal:first-child > .julia-hero-actions { order: 3; }
+  
 }
 
 /* ---------- Доп. подстройка под совсем узкие экраны ---------- */
