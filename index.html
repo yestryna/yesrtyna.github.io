@@ -1294,7 +1294,8 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script>
     line-height: 1.35;
     color: #a0a0a0;
     font-family: Arial, sans-serif;
-    max-width: 450px;
+    max-width: 320px;   /* было 450 — уже, чтобы переносилось */
+    width: 100%;        /* чтобы занимало доступную ширину, но не больше max-width */
 }
 .julia-privacy-note a {
     color: #a0a0a0;
